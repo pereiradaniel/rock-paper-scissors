@@ -110,33 +110,42 @@ const validValues = (moveOneValue, moveTwoValue, moveThreeValue) => moveOneValue
 
   // Questa funzione è utilizzata da "getRoundWinner()" e determina i resulti, e determina il vincitore di una partita confrontando le variabili che sono state passate alla funzione.
   const getMoveWinner = function(playerOneMoveType, playerOneMoveValue, playerTwoMoveType, playerTwoMoveValue) {
+
     if (!playerOneMoveType || !playerOneMoveValue || !playerTwoMoveType || !playerTwoMoveValue) {
       return null;
     }
 
     if (playerOneMoveType === playerTwoMoveType) {
+      // TEST MAIN FUNCTIONALITY "Should return the correct winner with two of the same move type and different values:"
       if (playerOneMoveValue > playerTwoMoveValue) {
         return 'Player One';
       } else if (playerOneMoveValue < playerTwoMoveValue) {
         return 'Player Two'
       } else {
+        // TEST MAIN FUNCTIONALITY "Should return the correct winner with two of the same move type and same value:"
         return 'Tie';
       }
     } else if (playerOneMoveType === 'rock') {
       if (playerTwoMoveType === 'scissors') {
+        // TEST MAIN FUNCTIONALITY "Should return the correct winner with rock versus scissors:"
         return 'Player One';
       } else if (playerTwoMoveType === 'paper') {
+        // TEST MAIN FUNCTIONALITY "Should return the correct winner with rock versus paper:"
         return 'Player Two';
       }
     } else if (playerOneMoveType === 'paper') {
       if (playerTwoMoveType === 'rock') {
+        // TEST MAIN FUNCTIONALITY "Should return the correct winner with rock versus paper:"
         return 'Player One';
       } else if (playerTwoMoveType === 'scissors') {
+        // TEST MAIN FUNCTIONALITY "Should return the correct winner with paper versus scissors:"
         return 'Player Two';
       }
     } else if (playerOneMoveType === 'scissors') {
       if (playerTwoMoveType === 'rock') {
+        // TEST MAIN FUNCTIONALITY "Should return the correct winner with rock versus scissors:"
         return 'Player Two';
+        // TEST MAIN FUNCTIONALITY "Should return the correct winner with paper versus scissors:"
       } else if (playerTwoMoveType === 'paper') {
         return 'Player One';
       }
