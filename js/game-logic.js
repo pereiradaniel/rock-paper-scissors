@@ -23,6 +23,7 @@
     // Valori:
     let playerTwoMoveOneValue, playerTwoMoveTwoValue, playerTwoMoveThreeValue;
 
+
 // Test unitario:  setPlayerMoves() - Main Functionality
 // Test unitario:  setPlayerMoves() - Edge Cases
 
@@ -83,3 +84,61 @@ const validType = (move) => move === 'rock' || move === 'paper' || move === 'sci
 
 // Questa funzione è utilizzata da "setPlayerMoves()" e determina se i valori di spostamento soddisfano i requisiti dei casi limite.
 const validValues = (moveOneValue, moveTwoValue, moveThreeValue) => moveOneValue >= 1 && moveTwoValue >= 1 && moveThreeValue >= 1 && moveOneValue + moveTwoValue + moveThreeValue < 100;
+
+
+
+// Test Unitario:  getRoundWinner() - Main Functionality
+
+  // Una funzione chiamata getRoundWinner, che prende un numero tondo (1, 2 o 3), confronta i tipi di movimento e i valori di entrambi i giocatori per quel round e restituisce il vincitore appropriato ('Player One', 'Player Two' o 'Tie')
+
+  // TEST MAIN FUNCTIONALITY "A function called getRoundWinner shoud exist:"
+  const getRoundWinner = function(round) {
+    // Invia le informazioni sulla partita a 'getMoveWinner ()' e riceve i dati che specificano il vincitore.
+    // Vedi la funzione 'getMoveWinner()' che è stata creata per determinare il vincitore di una partita specifica.
+    switch (round) {
+      case 1:
+      return getMoveWinner(playerOneMoveOneType, playerOneMoveOneValue, playerTwoMoveOneType, playerTwoMoveOneValue);
+        break;
+      case 2:
+      return getMoveWinner(playerOneMoveTwoType, playerOneMoveTwoValue, playerTwoMoveTwoType, playerTwoMoveTwoValue);
+        break;
+      case 3:
+      return getMoveWinner(playerOneMoveThreeType, playerOneMoveThreeValue, playerTwoMoveThreeType, playerTwoMoveThreeValue);
+        break;
+    }
+  };
+
+  // Questa funzione è utilizzata da "getRoundWinner()" e determina i resulti, e determina il vincitore di una partita confrontando le variabili che sono state passate alla funzione.
+  const getMoveWinner = function(playerOneMoveType, playerOneMoveValue, playerTwoMoveType, playerTwoMoveValue) {
+    if (!playerOneMoveType || !playerOneMoveValue || !playerTwoMoveType || !playerTwoMoveValue) {
+      return null;
+    }
+
+    if (playerOneMoveType === playerTwoMoveType) {
+      if (playerOneMoveValue > playerTwoMoveValue) {
+        return 'Player One';
+      } else if (playerOneMoveValue < playerTwoMoveValue) {
+        return 'Player Two'
+      } else {
+        return 'Tie';
+      }
+    } else if (playerOneMoveType === 'rock') {
+      if (playerTwoMoveType === 'scissors') {
+        return 'Player One';
+      } else if (playerTwoMoveType === 'paper') {
+        return 'Player Two';
+      }
+    } else if (playerOneMoveType === 'paper') {
+      if (playerTwoMoveType === 'rock') {
+        return 'Player One';
+      } else if (playerTwoMoveType === 'scissors') {
+        return 'Player Two';
+      }
+    } else if (playerOneMoveType === 'scissors') {
+      if (playerTwoMoveType === 'rock') {
+        return 'Player Two';
+      } else if (playerTwoMoveType === 'paper') {
+        return 'Player One';
+      }
+    }
+  }

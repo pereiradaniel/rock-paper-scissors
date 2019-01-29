@@ -87,7 +87,7 @@ describe('setPlayerMoves() - Main Functionality', function() {
   });
 });
 
-describe.only('setPlayerMoves() - Edge Cases', function() {
+describe('setPlayerMoves() - Edge Cases', function() {
   afterEach(clearMoves);
 
   it('should not set moves if a move type is missing', function() {
