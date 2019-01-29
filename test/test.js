@@ -306,7 +306,7 @@ describe('getRoundWinner() - Edge Cases', function() {
   });
 });
 
-describe.only('getGameWinner() - Main Functionality', function() {
+describe('getGameWinner() - Main Functionality', function() {
   it('a function called getGameWinner should exist', function() {
     should.equal(typeof getGameWinner, 'function');
   });
@@ -363,7 +363,7 @@ describe.only('getGameWinner() - Main Functionality', function() {
   });
 });
 
-describe('getGameWinner() - Main Functionality', function() {
+describe.only('getGameWinner() - Main Functionality', function() {
   it('should return null if not all values are set', function() {
     playerOneMoveOneType = undefined;
     playerOneMoveOneValue = 1;

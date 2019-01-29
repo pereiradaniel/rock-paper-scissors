@@ -164,7 +164,15 @@ const validValues = (moveOneValue, moveTwoValue, moveThreeValue) => moveOneValue
 
   // TEST MAIN FUNCTIONALITY "A function called getGameWinner should exist:"
   const getGameWinner = () => {
-    
+  
+    // TEST MAIN FUNCTIONALITY "Should return null if not all values are set:"
+    if (!playerOneMoveOneType || !playerOneMoveTwoType || !playerOneMoveThreeType || 
+        !playerTwoMoveOneType || !playerTwoMoveTwoType || !playerTwoMoveThreeType ||
+        !playerOneMoveOneValue || !playerOneMoveTwoValue || !playerOneMoveThreeValue ||
+        !playerTwoMoveOneValue || !playerTwoMoveTwoValue || !playerTwoMoveThreeValue) {
+      return null;
+    }
+
     // Queste variabili memorizzano il numero di partite che ogni giocatore vince. Sono inizializzati a 0.
     playerOnePts = 0;
     playerTwoPts = 0;
@@ -187,6 +195,7 @@ const validValues = (moveOneValue, moveTwoValue, moveThreeValue) => moveOneValue
 
   }
 
+  // Questa funzione è utilizzata da "getGameWinner()" ed è stata creata per i punti di ciascun giocatore.
   const addWin = (winner) => {
     if (winner === 'Player One') {
       playerOnePts = (playerOnePts + 1) || 1;
