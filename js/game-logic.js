@@ -1,1 +1,26 @@
-// All code should be written in this file.
+// Test unitario:  Player Moves
+
+  // Dodici variabili globali che rappresentano i tipi di movimento e i valori di ogni giocatore (3 tipi di movimento e 3 valori di movimento per ciascun giocatore).
+
+  // Le variabili di movimento del giocatore uno.
+    // Movimenti:
+    const playerOneMoveOneType = undefined;
+    const playerOneMoveTwoType = undefined;
+    const playerOneMoveThreeType = undefined;
+
+    // Valori:
+    const playerOneMoveOneValue = undefined;
+    const playerOneMoveTwoValue = undefined;
+    const playerOneMoveThreeValue = undefined;
+
+
+  // Le variabili di movimento del giocatore due.
+    // Movimenti:
+    const playerTwoMoveOneType = undefined;
+    const playerTwoMoveTwoType = undefined;
+    const playerTwoMoveThreeType = undefined;
+
+    // Valori:
+    const playerTwoMoveOneValue = undefined;
+    const playerTwoMoveTwoValue = undefined;
+    const playerTwoMoveThreeValue = undefined;

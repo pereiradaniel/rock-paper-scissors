@@ -7,7 +7,7 @@ vm.runInThisContext(code);
 
 var should = require('chai').should();
 
-describe('Player Moves', function() {
+describe.only('Player Moves', function() {
   it('a global variable called playerOneMoveOneType should exist and initialize to undefined', function() {
     should.equal(playerOneMoveOneType, undefined);
   });
