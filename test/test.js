@@ -7,7 +7,7 @@ vm.runInThisContext(code);
 
 var should = require('chai').should();
 
-describe.('Player Moves', function() {
+describe('Player Moves', function() {
   it('a global variable called playerOneMoveOneType should exist and initialize to undefined', function() {
     should.equal(playerOneMoveOneType, undefined);
   });
@@ -57,7 +57,7 @@ describe.('Player Moves', function() {
   });
 });
 
-describe.only('setPlayerMoves() - Main Functionality', function() {
+describe('setPlayerMoves() - Main Functionality', function() {
   afterEach(clearMoves);
 
   it('a function called setPlayerMoves should exist', function() {
@@ -87,7 +87,7 @@ describe.only('setPlayerMoves() - Main Functionality', function() {
   });
 });
 
-describe('setPlayerMoves() - Edge Cases', function() {
+describe.only('setPlayerMoves() - Edge Cases', function() {
   afterEach(clearMoves);
 
   it('should not set moves if a move type is missing', function() {
