@@ -6,32 +6,50 @@
   // Inizializza le variabili come "undefined".
   // Cerca in [projectfolder] /js/test.js per vedere il blocco di prova "describe Player Moves", per le variabili e i valori.
 
+  // Questi nomi di variabili dovrebbero essere i seguenti: playerOneMoveOneType, playerOneMoveOneValue
+
   // Le variabili di movimento del giocatore uno.
     // Movimenti:
-    const playerOneMoveOneType = undefined;
-    const playerOneMoveTwoType = undefined;
-    const playerOneMoveThreeType = undefined;
+    let playerOneMoveOneType, playerOneMoveTwoType, playerOneMoveThreeType;
 
     // Valori:
-    const playerOneMoveOneValue = undefined;
-    const playerOneMoveTwoValue = undefined;
-    const playerOneMoveThreeValue = undefined;
+    let playerOneMoveOneValue, playerOneMoveTwoValue, playerOneMoveThreeValue;
 
 
   // Le variabili di movimento del giocatore due.
     // Movimenti:
-    const playerTwoMoveOneType = undefined;
-    const playerTwoMoveTwoType = undefined;
-    const playerTwoMoveThreeType = undefined;
+    let playerTwoMoveOneType, playerTwoMoveTwoType, playerTwoMoveThreeType;
 
     // Valori:
-    const playerTwoMoveOneValue = undefined;
-    const playerTwoMoveTwoValue = undefined;
-    const playerTwoMoveThreeValue = undefined;
+    let playerTwoMoveOneValue, playerTwoMoveTwoValue, playerTwoMoveThreeValue;
 
 // Test unitario:  setPlayerMoves() - Main Functionality
 
   // Una funzione chiamata setPlayerMoves, che prenderà una stringa che rappresenta un giocatore (nella forma di "Player One" o "Player Two"), tre tipi di movimento e tre valori di spostamento e imposta le variabili di spostamento globali corrette.
 
+  // La firma del metodo per questa funzione dovrebbe essere la seguente: setPlayerMoves (player, moveOneType, moveOneValue, moveTwoType, moveTwoValue, moveThreeType, moveThreeValue).
+
   // "A function called setPlayerMoves should exist:"
-  const setPlayerMoves = function() {};
+  let setPlayerMoves = function(player, moveOneType, moveOneValue, moveTwoType, moveTwoValue, moveThreeType, moveThreeValue) {
+
+    // Imposta le variabili globali in base all'input del giocatore.
+    switch (player) {
+      case 'Player One':
+        playerOneMoveOneType = moveOneType;
+        playerOneMoveTwoType = moveTwoType;
+        playerOneMoveThreeType = moveThreeType;
+        playerOneMoveOneValue = moveOneValue;
+        playerOneMoveTwoValue = moveTwoValue;
+        playerOneMoveThreeValue = moveThreeValue;
+        break;
+
+      case 'Player Two':
+        playerTwoMoveOneType = moveOneType;
+        playerTwoMoveTwoType = moveTwoType;
+        playerTwoMoveThreeType = moveThreeType;
+        playerTwoMoveOneValue = moveOneValue;
+        playerTwoMoveTwoValue = moveTwoValue;
+        playerTwoMoveThreeValue = moveThreeValue;
+        break;
+    }
+  };
