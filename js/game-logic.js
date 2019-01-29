@@ -88,6 +88,7 @@ const validValues = (moveOneValue, moveTwoValue, moveThreeValue) => moveOneValue
 
 
 // Test Unitario:  getRoundWinner() - Main Functionality
+// Test Unitario:  getRoundWinner() - Edge Cases
 
   // Una funzione chiamata getRoundWinner, che prende un numero tondo (1, 2 o 3), confronta i tipi di movimento e i valori di entrambi i giocatori per quel round e restituisce il vincitore appropriato ('Player One', 'Player Two' o 'Tie')
 
@@ -105,12 +106,16 @@ const validValues = (moveOneValue, moveTwoValue, moveThreeValue) => moveOneValue
       case 3:
       return getMoveWinner(playerOneMoveThreeType, playerOneMoveThreeValue, playerTwoMoveThreeType, playerTwoMoveThreeValue);
         break;
+      // TEST EDGE CASE "Should return null if any move types or values are missing:"
+      default:
+        return null;
     }
-  };
+  }
 
   // Questa funzione è utilizzata da "getRoundWinner()" e determina i resulti, e determina il vincitore di una partita confrontando le variabili che sono state passate alla funzione.
   const getMoveWinner = function(playerOneMoveType, playerOneMoveValue, playerTwoMoveType, playerTwoMoveValue) {
 
+    // TEST EDGE CASE "Should return null if any move types or values are missing:"
     if (!playerOneMoveType || !playerOneMoveValue || !playerTwoMoveType || !playerTwoMoveValue) {
       return null;
     }

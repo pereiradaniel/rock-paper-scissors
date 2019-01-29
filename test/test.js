@@ -178,7 +178,7 @@ describe('setPlayerMoves() - Edge Cases', function() {
   });
 });
 
-describe.only('getRoundWinner() - Main Functionality', function() {
+describe('getRoundWinner() - Main Functionality', function() {
   it('a function called getRoundWinner should exist', function() {
     should.equal(typeof getRoundWinner, 'function');
   });
@@ -256,7 +256,7 @@ describe.only('getRoundWinner() - Main Functionality', function() {
   });
 });
 
-describe('getRoundWinner() - Edge Cases', function() {
+describe.only('getRoundWinner() - Edge Cases', function() {
   it('should return null for an invalid round number', function() {
     should.equal(getRoundWinner(4), null);
   });
