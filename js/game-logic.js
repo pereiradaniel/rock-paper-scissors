@@ -29,11 +29,11 @@
 
   // La firma del metodo per questa funzione dovrebbe essere la seguente: setPlayerMoves (player, moveOneType, moveOneValue, moveTwoType, moveTwoValue, moveThreeType, moveThreeValue).
 
-  // "A function called setPlayerMoves should exist:"
+  // TEST "A function called setPlayerMoves should exist:"
   let setPlayerMoves = function(player, moveOneType, moveOneValue, moveTwoType, moveTwoValue, moveThreeType, moveThreeValue) {
-
     // Imposta le variabili globali in base all'input del giocatore.
     switch (player) {
+      // TEST "It should set player one's moves with valid inputs."
       case 'Player One':
         playerOneMoveOneType = moveOneType;
         playerOneMoveTwoType = moveTwoType;
@@ -42,7 +42,7 @@
         playerOneMoveTwoValue = moveTwoValue;
         playerOneMoveThreeValue = moveThreeValue;
         break;
-
+      // TEST "It should set player one's moves with valid inputs."
       case 'Player Two':
         playerTwoMoveOneType = moveOneType;
         playerTwoMoveTwoType = moveTwoType;
