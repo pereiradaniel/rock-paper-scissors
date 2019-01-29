@@ -256,7 +256,7 @@ describe('getRoundWinner() - Main Functionality', function() {
   });
 });
 
-describe.only('getRoundWinner() - Edge Cases', function() {
+describe('getRoundWinner() - Edge Cases', function() {
   it('should return null for an invalid round number', function() {
     should.equal(getRoundWinner(4), null);
   });
@@ -306,7 +306,7 @@ describe.only('getRoundWinner() - Edge Cases', function() {
   });
 });
 
-describe('getGameWinner() - Main Functionality', function() {
+describe.only('getGameWinner() - Main Functionality', function() {
   it('a function called getGameWinner should exist', function() {
     should.equal(typeof getGameWinner, 'function');
   });

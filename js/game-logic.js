@@ -156,3 +156,41 @@ const validValues = (moveOneValue, moveTwoValue, moveThreeValue) => moveOneValue
       }
     }
   }
+
+
+// Test Unitario:  getGameWinner() - Main Functionality
+
+  // Una funzione chiamata getGameWinner, che confronta sia i tipi di movimento del giocatore che i valori per l'intero gioco e restituisce il vincitore appropriato ("Player One", "Player Two" o "Tie")
+
+  // TEST MAIN FUNCTIONALITY "A function called getGameWinner should exist:"
+  const getGameWinner = () => {
+    
+    // Queste variabili memorizzano il numero di partite che ogni giocatore vince. Sono inizializzati a 0.
+    playerOnePts = 0;
+    playerTwoPts = 0;
+
+    // Conta i punti per ogni giocatore usando 'getRoundWinner ()' per determinare il vincitore di ogni incontro.
+    addWin(getRoundWinner(1));
+    addWin(getRoundWinner(2));
+    addWin(getRoundWinner(3));
+
+    if (playerOnePts > playerTwoPts) {
+      // TEST MAIN FUNCTIONALITY "Should declare when player one wins:"
+      return 'Player One';
+    } else if (playerOnePts < playerTwoPts) {
+      // TEST MAIN FUNCTIONALITY "Should declare when player one wins:"
+      return 'Player Two';
+    } else {
+      // TEST MAIN FUNCTIONALITY "Should declare when the game is a tie:"
+      return 'Tie';
+    }
+
+  }
+
+  const addWin = (winner) => {
+    if (winner === 'Player One') {
+      playerOnePts = (playerOnePts + 1) || 1;
+    } else if (winner === 'Player Two') {
+      playerTwoPts = (playerTwoPts + 1) || 1;
+    }
+  }
